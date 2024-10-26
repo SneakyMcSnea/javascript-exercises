@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const findTheOldest = function(peopleArr) {
+let oldest = peopleArr.reduce((benchmarkObj, currentObj) => {
+    benchmarkAge = benchmarkObj.yearOfDeath - benchmarkObj.yearOfBirth;
+    currentAge = currentObj.yearOfDeath - currentObj.yearOfBirth;
+    if (currentAge > benchmarkAge){
+        return currentObj;
+    }
+    return benchmarkObj;
+    })
+return oldest;
+};
+
+const people = [
+      {
+        name: "Carly",
+        yearOfBirth: 1942,
+        yearOfDeath: 1970,
+      },
+      {
+        name: "Ray",
+        yearOfBirth: 1962,
+        yearOfDeath: 2011,
+      },
+      {
+        name: "Jane",
+        yearOfBirth: 1912,
+        yearOfDeath: 1941,
+      },
+    ]
+
+console.log(findTheOldest(people).name);
+
+    </script>
+</body>
+</html>
